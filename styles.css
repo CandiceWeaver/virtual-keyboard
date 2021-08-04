@@ -1,17 +1,98 @@
-* {
+body {
+  font-family: 'Gowun Dodum', sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Poppins", sans-serif;
+  color: #023e8a;
+  letter-spacing: 0.1rem;
 }
 
 h1 {
-  color: #023e8a;
+  border-bottom: 0.15rem solid;
+  padding-bottom: 2rem;
+  width: 80%;
+  text-align: center;
+  margin-bottom: 3rem;
 }
 
 textarea {
-  width: 90%;
-  border: 0.15rem solid #023e8a;
-  border-radius: 0.5rem;
-  box-shadow: 0.1rem 0.1rem 0.5rem #03045e;
+  width: 80%;
+  height: 50vh;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+.keyboard {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.313rem 0;
+  background: linear-gradient(to right bottom, #023e8a, #0077b6);
+  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.5);
+  user-select: none;
+  transition: bottom 0.4s;
+}
+
+.keyboard--hidden {
+  bottom: -100%;
+}
+
+.keyboard__keys {
+  text-align: center;
+}
+
+.keyboard__key {
+  height: 2.813rem;
+  width: 6%;
+  max-width: 5.625rem;
+  margin: 0.188rem;
+  border-radius: 0.25rem;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  font-size: 1.05rem;
+  outline: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: top;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  position: relative;
+}
+
+.keyboard__key:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.keyboard__key--wide {
+  width: 12%;
+}
+
+.keyboard__key--extra-wide {
+  width: 36%;
+  max-width: 31.25rem;
+}
+
+.keyboard__key--activatable::after {
+  content: '';
+  top: 0.625rem;
+  right: 0.625rem;
+  position: absolute;
+  width: 0.5rem;
+  height: 0.5rem;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.keyboard__key--active::after {
+  background: #08ff00;
+}
+
+.keyboard__key--dark {
+  background: rgba(0, 0, 0, 0.25);
 }
